@@ -1,0 +1,100 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dr. Ana Marković | Family Clinic</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Topbar with contact info -->
+  <div class="topbar text-white py-1">
+    <div class="container d-flex justify-content-between align-items-center flex-wrap">
+      <div class="d-flex flex-wrap align-items-center gap-3">
+        <span><i class="bi bi-telephone"></i> +381 64 3333 860, +381 64 4202 222</span>
+        <span><i class="bi bi-envelope"></i> info@damedika.rs</span>
+        <span><i class="bi bi-geo-alt"></i> Gandijeva 114b, Novi Beograd</span>
+      </div>
+      <div class="d-flex align-items-center gap-2">
+        <a href="#" class="btn btn-outline-light btn-sm">Schedule an appointment</a>
+        <img src="assets/icons/rs.png" class="language-flag" data-lang="sr-cyrillic" alt="Српски" width="20">
+        <img src="assets/icons/rs.png" class="language-flag" data-lang="sr-latin" alt="Srpski" width="20">
+        <img src="assets/icons/gb.png" class="language-flag" data-lang="en" alt="English" width="20">
+      </div>
+    </div>
+  </div>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <img src="assets/images/logo.png" alt="Clinic Logo" height="80">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link active" href="#">HOME</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">SERVICES</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Internal Medicine</a></li>
+              <li><a class="dropdown-item" href="#">Pediatrics</a></li>
+              <li><a class="dropdown-item" href="#">Gynecology</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">DOCTORS</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Dr. Ana</a></li>
+              <li><a class="dropdown-item" href="#">Dr. Marko</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="#">PRICE LIST</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">GALLERY</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">BLOG</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">CONTACT</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero-image text-white d-flex align-items-center">
+    <div class="container">
+      <p class="mb-1" data-en="Welcome to Da Ana Polyclinic" data-sr-latin="Dobrodošli u Da Ana polikliniku" data-sr-cyrillic="Добродошли у Да Ана поликлинику">
+        Welcome to Da Ana Polyclinic
+      </p>
+      <h1 class="display-5 fw-bold" data-en="The team which has a solution to your discomfort." data-sr-latin="Tim koji ima rešenje za vašu nelagodnost." data-sr-cyrillic="Тим који има решење за вашу нелагодност.">
+        The team which has a solution to your discomfort.
+      </h1>
+      <a href="#" class="btn btn-primary mt-3" data-en="Make an appointment" data-sr-latin="Zakažite pregled" data-sr-cyrillic="Закажите преглед">Make an appointment</a>
+    </div>
+  </section>
+
+  <!-- Fixed bottom bar (mobile only) -->
+  <div class="fixed-bottom-buttons d-md-none">
+    <a href="#" class="btn w-50 rounded-0 text-white bg-primary">SCHEDULE AN APPOINTMENT</a>
+    <a href="#" class="btn w-50 rounded-0 text-white bg-primary">OUR LOCATION</a>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    const flags = document.querySelectorAll('.language-flag');
+    flags.forEach(flag => {
+      flag.addEventListener('click', () => {
+        const lang = flag.getAttribute('data-lang');
+        document.querySelectorAll('[data-en]').forEach(el => {
+          const newText = el.getAttribute(`data-${lang}`);
+          if (newText) el.textContent = newText;
+        });
+      });
+    });
+  </script>
+</body>
+</html>
