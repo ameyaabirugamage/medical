@@ -268,3 +268,46 @@ footer {
   z-index: 1050;
 }
 
+/* Floating Buttons Container (mobile only) */
+.floating-buttons {
+  position: fixed;
+  right: 15px;
+  bottom: 90px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 1000;
+}
+
+.float-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 1.2rem;
+  text-decoration: none;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  transition: transform 0.2s ease-in-out;
+}
+
+.float-btn:hover {
+  transform: scale(1.1);
+}
+
+/* Individual styles */
+.float-btn.whatsapp {
+  background-color: #25D366;
+}
+
+.float-btn.viber {
+  background-color: #7c529e;
+}
+
+.float-btn.call {
+  background-color: #e60073;
+}
+
+
